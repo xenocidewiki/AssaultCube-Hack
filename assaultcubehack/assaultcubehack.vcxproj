@@ -72,8 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>X:\msdetours\include;$(IncludePath)</IncludePath>
-    <LibraryPath>X:\msdetours\lib.X86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\msdetours\include;X:\msdetours\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\msdetours\lib.X86;X:\msdetours\lib.X86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="gameinfo.cpp" />
     <ClCompile Include="hacks.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="opengl.cpp" />
@@ -158,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hacks.hpp" />
+    <ClInclude Include="hooks.hpp" />
     <ClInclude Include="opengl.hpp" />
     <ClInclude Include="gameinfo.hpp" />
     <ClInclude Include="setup.hpp" />

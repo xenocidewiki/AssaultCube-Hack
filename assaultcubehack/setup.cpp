@@ -1,4 +1,5 @@
 #include "setup.hpp"
+#include "hooks.hpp"
 
 void Setup::init_detour()
 {

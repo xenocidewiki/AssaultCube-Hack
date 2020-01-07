@@ -108,7 +108,7 @@ void Hackeroni::world_to_screen(Vector3D enemy_coordinates, Vector2D &pixel_coor
 	float* matrix_ptr = (float*)0x501AE8;
 
 	for (int i = 0; i < 16; i++)
-		matrix.push_back((float)(*(matrix_ptr + i)));
+		matrix.push_back(*(matrix_ptr + i));
 
 	float screen_x = 1024 / 2.0F;
 	float screen_y = 768 / 2.0F;
@@ -137,7 +137,7 @@ void Hackeroni::draw_esp()
 		if (yeet == nullptr)
 			continue;
 
-		if (*ent_deref < 0x40000)
+		if (*ent_deref < 0x40000) // thats fucking retarded
 			continue;
 
 		if (deref_localplayer_ptr->teamnum == yeet->teamnum)
@@ -145,6 +145,7 @@ void Hackeroni::draw_esp()
 
 		Vector2D screen_head, screen_foot;
 
+		//it draws if im 180 
 		world_to_screen(yeet->player_pos, screen_head);
 		world_to_screen(yeet->foot_pos, screen_foot);
 
