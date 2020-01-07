@@ -1,6 +1,7 @@
 #pragma once
 
-#include "playerinfo.hpp"
+#include "gameinfo.hpp"
+#include "opengl.hpp"
 
 struct Hackeroni
 {
@@ -8,5 +9,5 @@ struct Hackeroni
 	void aimbot();
 	void telehack();
 	void get_closest_player(Player* &out);
-	void world_to_screen(Vector3D &enemy_coordinates, Vector2D &pixel_coordinates);
+	void world_to_screen(Vector3D enemy_coordinates, Vector2D &pixel_coordinates);
 };
