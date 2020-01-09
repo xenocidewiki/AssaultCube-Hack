@@ -9,11 +9,11 @@ void OpenGL::draw_line(float x_src, float y_src, float x_dst, float y_dst)
 	glEnd();
 }
 
-void OpenGL::draw_box(int x, int y, int x2, int y2)
+void OpenGL::draw_box(int x, int y, int x2, int y2, int r, int g, int b)
 {
 	glDepthMask(GL_FALSE);
 	glDisable(GL_TEXTURE_2D);
-	glColor4f(255, 0, 0, 255);
+	glColor4f(r, g, b, 255);
 
 	glBegin(GL_LINE_LOOP);
 

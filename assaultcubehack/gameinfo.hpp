@@ -3,10 +3,10 @@
 
 struct Offsets
 {
-	const uintptr_t* offset_localplayer = reinterpret_cast<uintptr_t*>(0x50F4F4);
-	const uintptr_t* offset_entities = reinterpret_cast<uintptr_t*>(0x50F4F8);
-	const uintptr_t* offset_w2s_matrix = reinterpret_cast<uintptr_t*>(0x501AE8);
-	const uintptr_t* offset_playercount = reinterpret_cast<uintptr_t*>(0x50F500);
+	const uintptr_t* offset_localplayer = reinterpret_cast<const uintptr_t*>(0x50F4F4);
+	const uintptr_t** offset_entities	= reinterpret_cast<const uintptr_t**>(0x50F4F8);
+	const uintptr_t* offset_w2s_matrix	= reinterpret_cast<const uintptr_t*>(0x501AE8);
+	const uintptr_t* offset_playercount = reinterpret_cast<const uintptr_t*>(0x50F500);
 };
 
 struct Player
@@ -25,6 +25,7 @@ struct Player
 	int8_t teamnum; //0x032C
 
 	Player* read_local_player();
-	std::vector<Player*> read_entities(int player_count);
+	Player* read_entities(int entity_index);
 	int read_player_count();
+	bool is_visible(Vector3D from, Vector3D to);
 };

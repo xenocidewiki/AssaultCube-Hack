@@ -8,5 +8,5 @@ namespace OpenGL
 {
 	void draw_line(float x_src, float y_src, float x_dst, float y_dst);
 
-	void draw_box(int x, int y, int x2, int y2);
+	void draw_box(int x, int y, int x2, int y2, int r, int g, int b	);
 }
