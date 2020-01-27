@@ -36,3 +36,8 @@ bool Player::is_visible(Vector3D from, Vector3D to)
 		add esp, 0x18;
 	}
 }
+
+Screen* Screen::get_screen_settings()
+{
+	return reinterpret_cast<Screen*>(0x510C94);
+}
