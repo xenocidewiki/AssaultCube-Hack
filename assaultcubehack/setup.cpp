@@ -3,7 +3,7 @@
 
 void Setup::init_detour()
 {
-	original_func = detour_function((uintptr_t*)0x40C375, (uintptr_t)drawhud_hook, 13);
+	original_func = detour_function(reinterpret_cast<uintptr_t*>(0x40C375), reinterpret_cast<uintptr_t>(drawhud_hook), 13);
 }
 
 void Setup::init_hacks()
@@ -13,6 +13,10 @@ void Setup::init_hacks()
 	hacks_ptr->aimbot();
 }
 
+/*
+Courtesy of A200K
+There is an alternative way of hooking which I should implement instead.
+*/
 void Setup::drawhud_end_hook()
 {
 	std::unique_ptr<Screen> screen_ptr = std::make_unique<Screen>();

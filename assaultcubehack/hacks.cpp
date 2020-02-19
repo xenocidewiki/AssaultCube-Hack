@@ -22,7 +22,9 @@ void Hackeroni::aimbot()
 	}
 }
 
-//This is dumb as fuck, i rewrote it with w2s use to get closest player to crosshair below, it makes it stick to the player instead of randomly switching too :)
+/*
+Dumb solution to getting the closest player. I am using the one below that instead.
+*/
 void Hackeroni::get_closest_player(Player* local_player, Player* &closest_player_out)
 {
 	float target_angle	= 999999;
@@ -56,6 +58,7 @@ void Hackeroni::get_closest_player(Player* local_player, Player* &closest_player
 	}
 }
 
+//Calculates straight line distance from the position of your crosshair to the players head, and picks the closest player (least distance)
 void Hackeroni::get_closest_player_to_crosshair(Player* local_player, Player*& closest_player_out)
 {
 	float target_dist		= 999999;
@@ -94,6 +97,7 @@ void Hackeroni::get_closest_player_to_crosshair(Player* local_player, Player*& c
 	}
 }
 
+//W2S transform
 int Hackeroni::world_to_screen(Vector3D enemy_coordinates, Vector2D &pixel_coordinates)
 {
 	std::vector<float> matrix;
@@ -105,7 +109,7 @@ int Hackeroni::world_to_screen(Vector3D enemy_coordinates, Vector2D &pixel_coord
 	float screen_x = screen->screen_x / 2.0F;
 	float screen_y = screen->screen_y / 2.0F;
 
-	//could be made into a function but i honestly can't be fucked to do it ex deeee
+	//Should be turned into a readmatrix function or something along those lines
 	float x = enemy_coordinates.x * matrix[0] + enemy_coordinates.y * matrix[4] + enemy_coordinates.z * matrix[8] + matrix[12];
 	float y = enemy_coordinates.x * matrix[1] + enemy_coordinates.y * matrix[5] + enemy_coordinates.z * matrix[9] + matrix[13];
 	float z = enemy_coordinates.x * matrix[2] + enemy_coordinates.y * matrix[6] + enemy_coordinates.z * matrix[10] + matrix[14];

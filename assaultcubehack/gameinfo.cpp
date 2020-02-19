@@ -17,6 +17,7 @@ int Player::read_player_count()
 	return *offsets->offset_playercount;
 }
 
+//Calls the game's internal raytracing function which checks whether you can see an enemy player.
 bool Player::is_visible(Vector3D from, Vector3D to)
 {
 	__asm

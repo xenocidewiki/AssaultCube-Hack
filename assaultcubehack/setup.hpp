@@ -3,7 +3,7 @@
 #include <functional>
 #include "hacks.hpp"
 
-struct Setup
+namespace Setup
 {
 	void init_hacks();
 	void init_detour();
